@@ -9,8 +9,9 @@
     "client": "cd src/client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "install-client": "cd src/client && npm install",
-    "build": "cd src/client && npm run build",
-    "heroku-postbuild": "npm run install-client && npm run build"
+    "build": "cd src/client && npm install && npm run build",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "vercel-build": "npm run build"
   },
   "keywords": [
     "concrete",
@@ -29,5 +30,8 @@
   "devDependencies": {
     "concurrently": "^8.0.1",
     "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 } 
