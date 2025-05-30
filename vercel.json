@@ -10,7 +10,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "build",
-        "buildCommand": "npm install --legacy-peer-deps && npm run build"
+        "buildCommand": "npm install --legacy-peer-deps && GENERATE_SOURCEMAP=false npm run build"
       }
     }
   ],
@@ -20,8 +20,14 @@
       "dest": "src/server/index.js"
     },
     {
+      "handle": "filesystem"
+    },
+    {
       "src": "/(.*)",
       "dest": "src/client/build/$1"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 } 
