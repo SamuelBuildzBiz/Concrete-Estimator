@@ -8,8 +8,8 @@
     "server": "nodemon src/server/index.js",
     "client": "cd src/client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "install-client": "cd src/client && npm install",
-    "build": "cd src/client && npm install && npm run build",
+    "install-client": "cd src/client && npm install --legacy-peer-deps",
+    "build": "cd src/client && npm install --legacy-peer-deps && npm run build",
     "heroku-postbuild": "npm run install-client && npm run build",
     "vercel-build": "npm run build"
   },
